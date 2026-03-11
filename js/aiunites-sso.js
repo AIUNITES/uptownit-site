@@ -255,7 +255,7 @@ body{padding-top:68px!important}
           <div class="sso-login-sub">Sign in once, stay signed in across the network</div>
         </div>
         <div class="sso-login-network">
-          <span>BizStry</span><span>AI YHWH</span><span>UptownIT</span><span>+ 14 more</span>
+          <span>BizStry</span><span>AI YHWH</span><span>UptownIT</span>
         </div>
         <div class="sso-field">
           <label>Display Name</label>
@@ -266,7 +266,8 @@ body{padding-top:68px!important}
           <input type="email" id="sso-email-input" placeholder="you@example.com" autocomplete="email">
         </div>
         <button class="sso-submit" id="sso-submit-btn">Sign In →</button>
-        <p class="sso-login-note">No password needed. Your info is stored locally<br>and shared across AIUNITES sites.</p>`
+        <p class="sso-login-note">No password needed. Your info is stored locally<br>and shared across AIUNITES sites.</p>
+        <div class="sso-demo-notice">&#9888; Demo purposes only &mdash; not real authentication.</div>`
     }, (p) => {
       p.querySelector('#sso-submit-btn').addEventListener('click', function () {
         const name  = p.querySelector('#sso-name-input').value.trim();
