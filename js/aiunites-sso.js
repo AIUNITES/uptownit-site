@@ -87,7 +87,7 @@
 body{padding-top:68px!important}
 .nav{top:68px!important}
   `;
-  document.head.appendChild(css);
+  document.body.appendChild(css);
 
   /* ── auth bar ──────────────────────────────────────────────── */
   const bar = document.createElement('div');
