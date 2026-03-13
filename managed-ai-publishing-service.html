@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP15KRLV6P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VP15KRLV6P');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Managed AI Web Publishing Service | UptownIT</title>
+  <meta name="description" content="Add AI-powered web publishing to your managed IT service catalog. Deploy for clients using Windows infrastructure — Task Scheduler, PowerShell, GitHub. A new billable managed service for MSPs and IT departments.">
+  <meta name="keywords" content="managed IT web publishing, MSP AI automation, IT service catalog, AI publishing service, PowerShell web automation, enterprise web publishing, client site management, IT department publishing, managed web service">
+  <meta name="author" content="AIUNITES">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aiunites.github.io/uptownit-site/managed-ai-publishing-service.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aiunites.github.io/uptownit-site/managed-ai-publishing-service.html">
+  <meta property="og:title" content="Managed AI Web Publishing Service | UptownIT">
+  <meta property="og:description" content="A new billable managed service for MSPs: AI-powered web publishing built on Windows infrastructure your team already knows.">
+  <meta property="og:image" content="https://aiunites.github.io/uptownit-site/images/og-image.png">
+  <meta property="og:site_name" content="UptownIT">
+
+  <meta name="theme-color" content="#22c55e">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --green-glow: rgba(34,197,94,0.2);
+      --blue: #3b82f6;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --bg: #060c10;
+      --bg2: #0a1218;
+      --bg3: #0f1a22;
+      --border: rgba(34,197,94,0.15);
+      --border2: rgba(255,255,255,0.08);
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; padding-top: 36px; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 33px; left: 0; right: 0; z-index: 200;
+      background: rgba(6,12,16,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 56px; display: flex; align-items: center;
+      padding: 0 32px; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 18px; font-weight: 800; color: #fff; white-space: nowrap; }
+    .nav-logo .accent { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--green); color: #000; border: none; border-radius: 8px;
+      padding: 8px 18px; font-size: 13px; font-weight: 700; cursor: pointer;
+      text-decoration: none; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--green-dark); color: #fff; }
+    @media (max-width: 640px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* SECTIONS */
+    section { padding: 96px 24px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .sec-badge {
+      display: inline-block; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+      color: var(--green); border-radius: 100px; padding: 4px 14px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px;
+    }
+    .sec-h { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .sec-p { color: var(--muted); max-width: 580px; font-size: 1.05rem; line-height: 1.7; }
+    .sec-head { margin-bottom: 52px; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 140px 32px 80px; position: relative;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34,197,94,0.12) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 860px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+      color: var(--green); border-radius: 100px; padding: 6px 16px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 28px;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 .hi { color: var(--green); }
+    .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--muted); max-width: 660px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-labels { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .label-chip {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border2);
+      border-radius: 6px; padding: 6px 14px; font-size: 12px; color: var(--muted);
+      font-family: 'Courier New', monospace;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-green {
+      background: var(--green); color: #000; border: none; border-radius: 10px;
+      padding: 14px 28px; font-size: 15px; font-weight: 700; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: all .2s; box-shadow: 0 4px 20px var(--green-glow);
+    }
+    .btn-green:hover { background: var(--green-dark); color: #fff; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text); border: 1px solid var(--border2);
+      border-radius: 10px; padding: 14px 28px; font-size: 15px; font-weight: 600;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: all .2s;
+    }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+    /* OPPORTUNITY */
+    .opp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .opp-card {
+      background: var(--bg2); border: 1px solid var(--border2); border-radius: 14px;
+      padding: 28px; transition: border-color .2s;
+    }
+    .opp-card:hover { border-color: var(--green); }
+    .opp-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .opp-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .opp-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    /* STACK */
+    .stack-section { background: var(--bg2); }
+    .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .stack-card {
+      background: var(--bg3); border: 1px solid var(--border2); border-radius: 14px; padding: 28px;
+    }
+    .stack-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .stack-card h3 .tag {
+      background: rgba(34,197,94,0.15); color: var(--green); border-radius: 4px;
+      padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    }
+    .stack-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .stack-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--muted); }
+    .stack-list li .ic { color: var(--green); flex-shrink: 0; font-family: monospace; }
+
+    /* BILLING MODEL */
+    .billing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .billing-card {
+      background: var(--bg2); border: 1px solid var(--border2); border-radius: 16px;
+      padding: 32px; position: relative;
+    }
+    .billing-card.featured { border-color: var(--green); }
+    .billing-card .b-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+    .billing-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+    .billing-card .b-price { font-size: 2.2rem; font-weight: 800; color: var(--green); margin-bottom: 4px; }
+    .billing-card .b-period { font-size: .85rem; color: var(--muted); margin-bottom: 20px; }
+    .billing-card .b-desc { color: var(--muted); font-size: .88rem; line-height: 1.65; margin-bottom: 20px; }
+    .billing-card .b-includes { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .billing-card .b-includes li { display: flex; align-items: flex-start; gap: 8px; font-size: .85rem; color: var(--muted); }
+    .billing-card .b-includes li span:first-child { color: var(--green); flex-shrink: 0; }
+
+    /* PROCESS */
+    .process-list { display: flex; flex-direction: column; gap: 0; }
+    .process-step {
+      display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+      padding: 28px 0; border-bottom: 1px solid var(--border2);
+    }
+    .process-step:last-child { border-bottom: none; }
+    .p-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.3);
+      color: var(--green); font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .process-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .process-step p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+    .process-step .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .p-tag {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border2);
+      border-radius: 4px; padding: 3px 9px; font-size: 11px; color: var(--muted);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* SECURITY TABLE */
+    .sec-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .sec-table th, .sec-table td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--border2); }
+    .sec-table th { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+    .sec-table td:first-child { font-weight: 500; }
+    .sec-table td:not(:first-child) { color: var(--muted); }
+    .sec-table .pass { color: var(--green); font-weight: 600; }
+    .sec-table .note { color: var(--amber); }
+    .table-wrap { background: var(--bg2); border: 1px solid var(--border2); border-radius: 14px; overflow: hidden; }
+
+    /* CTA */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(59,130,246,0.08));
+      border: 1px solid rgba(34,197,94,0.2); border-radius: 20px;
+      padding: 60px 40px; text-align: center;
+    }
+    .cta-box h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 14px; }
+    .cta-box p { color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+    .cta-box .cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+    /* FOOTER */
+    .footer { background: #0a1218; border-top: 1px solid var(--border); padding: 28px 16px; text-align: center; }
+    .footer p { color: rgba(255,255,255,.3); font-size: 12px; margin: 4px 0; }
+    .footer a { color: var(--green); text-decoration: none; }
+
+    /* Feedback FAB */
+    .fab {
+      position: fixed; bottom: 24px; right: 24px;
+      background: linear-gradient(135deg, var(--green), #16a34a);
+      color: #000; border-radius: 24px; padding: 0 16px; height: 48px;
+      display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700;
+      text-decoration: none; box-shadow: 0 4px 20px var(--green-glow);
+      transition: all .3s; z-index: 9999;
+    }
+    .fab:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- AIUNITES Webring -->
+  <style>.aiunites-bar{position:fixed;top:0;left:0;right:0;z-index:10000;background:linear-gradient(90deg,#0a0a0f,#1a1a2e);border-bottom:1px solid rgba(99,102,241,.3);padding:8px 0;font-size:12px}.aiunites-bar-content{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px;overflow-x:auto;scrollbar-width:none}.aiunites-bar-content::-webkit-scrollbar{display:none}.aiunites-bar a{color:rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;transition:color .2s}.aiunites-bar a:hover{color:#fff}.aiunites-bar-brand{color:#6366f1!important;font-weight:600}.aiunites-bar-brand:hover{color:#818cf8!important}.aiunites-bar-divider{color:rgba(255,255,255,.2)}</style>
+  <style>.wb-arrow{display:none;position:fixed;top:0;width:36px;height:33px;align-items:center;justify-content:center;cursor:pointer;z-index:10001;border:none;padding:0;font-size:16px;line-height:1;color:rgba(255,255,255,.8);transition:color .2s,opacity .2s}.wb-arrow:hover{color:#fff}.wb-left{left:0;background:linear-gradient(90deg,#0d0d1a 55%,transparent)}.wb-right{right:0;background:linear-gradient(270deg,#0d0d1a 55%,transparent)}@media (hover:hover) and (pointer:fine){.wb-arrow{display:flex}}</style>
+  <button class="wb-arrow wb-left" id="wb-left" aria-label="Scroll webring left">&#8249;</button>
+  <div class="aiunites-bar"><div class="aiunites-bar-content" id="wb-content">
+    <a href="https://aiunites.github.io/aiunites-site/" class="aiunites-bar-brand">◆ AIUNITES</a>
+    <span class="aiunites-bar-divider">|</span>
+    <a href="https://aiunites.github.io/aizines-app/">AIZines</a>
+    <a href="https://aiunites.github.io/aibyjob-demo/">AIByJob</a>
+    <a href="https://aiunites.github.io/redomy-demo/">Redomy</a>
+    <a href="https://aiunites.github.io/videobate-site/">VideoBate</a>
+    <a href="https://aiunites.github.io/voicestry-site/">VoiceStry</a>
+    <a href="https://aiunites.github.io/furnishthings-site/">FurnishThings</a>
+    <a href="https://aiunites.github.io/bizstry-site/">BizStry</a>
+    <a href="https://aiunites.github.io/aiyhwh-site/">AI YHWH</a>
+    <a href="https://aiunites.github.io/cloudsion-site/">Cloudsion</a>
+    <a href="https://aiunites.github.io/gameatica-site/">Gameatica</a>
+    <a href="https://aiunites.github.io/inthisworld-site/">InThisWorld</a>
+    <a href="https://aiunites.github.io/erpise-site/">ERPise</a>
+    <a href="https://aiunites.github.io/erpize-site/">ERPize</a>
+    <a href="https://aiunites.github.io/aitsql-site/">AITSQL</a>
+    <a href="https://aiunites.github.io/cosmostheopera-site/">🌌 COSMOS</a>
+  </div></div>
+  <script>(function(){if(location.protocol==='file:'||location.hostname==='localhost'||location.hostname==='127.0.0.1'){document.querySelectorAll('.aiunites-bar a').forEach(a=>{a.href=a.href.replace('https://aiunites.github.io/','../')+'index.html';});}var c=document.getElementById('wb-content'),l=document.getElementById('wb-left'),r=document.getElementById('wb-right');if(!c||!l||!r)return;function upd(){var atL=c.scrollLeft<8,atR=c.scrollLeft>=c.scrollWidth-c.clientWidth-8;l.style.opacity=atL?'0':'1';l.style.pointerEvents=atL?'none':'auto';r.style.opacity=atR?'0':'1';r.style.pointerEvents=atR?'none':'auto';}l.onclick=function(){c.scrollBy({left:-220,behavior:'smooth'});};r.onclick=function(){c.scrollBy({left:220,behavior:'smooth'});};c.addEventListener('scroll',upd,{passive:true});upd();})()</script>
+  <button class="wb-arrow wb-right" id="wb-right" aria-label="Scroll webring right">&#8250;</button>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">💻 Uptown<span class="accent">IT</span></a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="#billing">Pricing</a>
+      <a href="index.html" style="color:rgba(255,255,255,.4)">← UptownIT</a>
+      <a href="#contact" class="nav-cta">Get Deployment Guide</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🖥️ Managed IT Service — AI Web Publishing</div>
+      <h1>A New Billable Service<br>for Your <span class="hi">IT Practice</span></h1>
+      <p class="hero-sub">
+        AI-powered web publishing is now a deployable managed IT service. Built entirely on
+        Windows infrastructure your team already manages — Task Scheduler, PowerShell, Git,
+        and GitHub. Set it up once per client. Bill it monthly. No new tooling to learn.
+      </p>
+      <div class="hero-labels">
+        <span class="label-chip">Task Scheduler</span>
+        <span class="label-chip">PowerShell</span>
+        <span class="label-chip">launcher.exe</span>
+        <span class="label-chip">Git + GitHub Pages</span>
+        <span class="label-chip">Claude AI (MCP)</span>
+        <span class="label-chip">Apps Script</span>
+        <span class="label-chip">LeastPrivilege RunLevel</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#process" class="btn-green">📋 See the Deployment Process</a>
+        <a href="#billing" class="btn-ghost">💰 Service Billing Model</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ OPPORTUNITY ══ -->
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">The Opportunity</div>
+        <h2 class="sec-h">Why IT Departments Should Own This</h2>
+        <p class="sec-p">Every business with a website is a candidate. Marketing can't run it — they don't manage servers or GitHub. That puts it squarely in your lane.</p>
+      </div>
+      <div class="opp-grid">
+        <div class="opp-card">
+          <div class="opp-icon">📦</div>
+          <h3>Existing Infrastructure</h3>
+          <p>The entire stack runs on components already in your toolkit: Windows Task Scheduler, PowerShell, and Git. No new servers, no SaaS subscriptions beyond Claude Pro.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-icon">🔁</div>
+          <h3>Recurring Revenue</h3>
+          <p>Setup fee plus a monthly managed service retainer. Every client with a website is a candidate. Works for law firms, clinics, nonprofits, and any small business.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-icon">🤖</div>
+          <h3>AI Does the Content Work</h3>
+          <p>Claude AI writes, edits, and updates web content through the MCP filesystem bridge. Your IT team handles deployment and maintenance — not copywriting.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-icon">🔒</div>
+          <h3>IT-Native Security Model</h3>
+          <p>Runs at LeastPrivilege — no elevated rights needed. No web server exposed. No inbound ports opened. GitHub is the only outbound endpoint.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-icon">📊</div>
+          <h3>Managed Analytics</h3>
+          <p>GA4 and a daily Apps Script export deliver traffic and feedback summaries automatically. Include analytics reporting in your monthly client report at no extra cost.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-icon">⚙️</div>
+          <h3>Scriptable at Scale</h3>
+          <p>setup.ps1 automates the full client onboarding: git config, Task Scheduler XML import, launcher.exe install. Provision a new client in under 15 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TECH STACK ══ -->
+  <section class="stack-section" id="stack">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">Technical Stack</div>
+        <h2 class="sec-h">Built on Windows Infrastructure</h2>
+        <p class="sec-p">Every component is something your IT team already knows how to manage, audit, and troubleshoot.</p>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3>🪟 Windows Layer <span class="tag">On-Prem</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> Task Scheduler — time-based auto-publish trigger (every 10 min)</li>
+            <li><span class="ic">✓</span> launcher.exe — C# GUI app, no conhost, no flash, no visible window</li>
+            <li><span class="ic">✓</span> auto-publish.ps1 — commits and pushes all client repos silently</li>
+            <li><span class="ic">✓</span> LogonType=InteractiveToken — works with PIN-only accounts, no password prompt</li>
+            <li><span class="ic">✓</span> RunLevel=LeastPrivilege — no elevation required, no UAC prompts</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>🐙 Git / Hosting Layer <span class="tag">Free</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> Git — version control, rollback, full change history per client</li>
+            <li><span class="ic">✓</span> GitHub Pages — zero-cost static hosting, HTTPS, global CDN</li>
+            <li><span class="ic">✓</span> Custom domains via CNAME records — manage in GoDaddy or Cloudflare</li>
+            <li><span class="ic">✓</span> Auto-deploy on push — no CI/CD pipeline configuration needed</li>
+            <li><span class="ic">✓</span> Per-client repos — isolated environments, no cross-client exposure</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>🧠 AI Layer <span class="tag">Claude</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> Claude Desktop — the AI editor, runs locally on client or IT machine</li>
+            <li><span class="ic">✓</span> MCP filesystem plugin — gives Claude direct read/write to local site files</li>
+            <li><span class="ic">✓</span> Claude reads UATEST_PLAN.md before edits — respects existing features</li>
+            <li><span class="ic">✓</span> No API key management needed for Claude Desktop users</li>
+            <li><span class="ic">✓</span> Cloud option: Claude API for multi-tenant managed deployments</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>📊 Analytics Layer <span class="tag">Google</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> GA4 — one property, all client sites tracked under sub-properties</li>
+            <li><span class="ic">✓</span> Google Apps Script — daily CSV export to Drive, no server needed</li>
+            <li><span class="ic">✓</span> download-feedback-summary.ps1 — pulls summary locally via scheduled task</li>
+            <li><span class="ic">✓</span> Google Forms — client feedback and waitlist, anti-spam honeypot ready</li>
+            <li><span class="ic">✓</span> Publish-log.txt — local audit trail of every auto-publish event</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>🌐 Network Layer <span class="tag">DNS</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> CNAME record in client DNS — www → aiunites.github.io (or client account)</li>
+            <li><span class="ic">✓</span> CNAME file in repo root — GitHub Pages custom domain binding</li>
+            <li><span class="ic">✓</span> Enforce HTTPS via GitHub Pages settings — automatic cert renewal</li>
+            <li><span class="ic">✓</span> Sitemap.xml + robots.txt — SEO scaffolding included in template</li>
+            <li><span class="ic">✓</span> Google Search Console verification — GA4 tag or HTML file method</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>📁 File Structure <span class="tag">Standardized</span></h3>
+          <ul class="stack-list">
+            <li><span class="ic">✓</span> DemoTemplate — base HTML/CSS/JS template, cloned per client</li>
+            <li><span class="ic">✓</span> UATEST_PLAN.md — per-site feature manifest and regression checklist</li>
+            <li><span class="ic">✓</span> PROGRESS_LOG.md — shared changelog across all client sites</li>
+            <li><span class="ic">✓</span> js/cloud-database.js — shared CloudDB sync module</li>
+            <li><span class="ic">✓</span> Vanilla HTML/CSS/JS only — no frameworks, no build step, no npm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DEPLOYMENT PROCESS ══ -->
+  <section id="process">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">Deployment Process</div>
+        <h2 class="sec-h">Onboarding a New Client Site</h2>
+        <p class="sec-p">Repeatable. Scriptable. Under 15 minutes per client once setup.ps1 is ready.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-step">
+          <div class="p-num">1</div>
+          <div>
+            <h3>Create the GitHub Repository</h3>
+            <p>Fork DemoTemplate into a new client repo under the AIUNITES (or client) GitHub account. Rename, set to public for Pages hosting. This is the client's site container for all future changes.</p>
+            <div class="p-tags"><span class="p-tag">GitHub CLI</span><span class="p-tag">git clone</span><span class="p-tag">DemoTemplate</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="p-num">2</div>
+          <div>
+            <h3>Run setup.ps1 on the Client Machine</h3>
+            <p>The installer script configures git credentials, creates the directory structure, builds launcher.exe from the C# source, and imports the Task Scheduler XML for both auto-publish and analytics download tasks.</p>
+            <div class="p-tags"><span class="p-tag">setup.ps1</span><span class="p-tag">build-launcher.ps1</span><span class="p-tag">schtasks /create /xml</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="p-num">3</div>
+          <div>
+            <h3>Configure DNS and Custom Domain</h3>
+            <p>Add a CNAME record in the client's DNS registrar pointing www to GitHub Pages. Add the CNAME file to the repo root. Enable HTTPS enforcement in GitHub Pages settings. GitHub auto-provisions the SSL cert within minutes.</p>
+            <div class="p-tags"><span class="p-tag">CNAME record</span><span class="p-tag">GitHub Pages settings</span><span class="p-tag">Enforce HTTPS</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="p-num">4</div>
+          <div>
+            <h3>Connect Claude Desktop + MCP</h3>
+            <p>Install Claude Desktop, add the filesystem MCP plugin, point it at the client's GitHub folder. The AI can now read and write site files directly. No API keys needed for the end client — only Claude Pro subscription.</p>
+            <div class="p-tags"><span class="p-tag">claude_desktop_config.json</span><span class="p-tag">MCP filesystem</span><span class="p-tag">Claude Pro</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="p-num">5</div>
+          <div>
+            <h3>Set Up Analytics and Feedback Pipeline</h3>
+            <p>Add the client's GA4 tracking ID to all HTML pages. Deploy the Apps Script to their Google account, run exportFeedbackCSV once to get the stable file ID, paste it into download-feedback-summary.ps1, register the download task.</p>
+            <div class="p-tags"><span class="p-tag">GA4</span><span class="p-tag">Apps Script</span><span class="p-tag">Drive file ID</span><span class="p-tag">Task Scheduler</span></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="p-num">6</div>
+          <div>
+            <h3>Verify Auto-Publish is Silent and Working</h3>
+            <p>Trigger the task manually, check publish-log.txt for output, confirm no window appears on screen. Verify the site is live at the custom domain. Hand off the Claude Desktop interface to the client or retain it for managed content updates.</p>
+            <div class="p-tags"><span class="p-tag">publish-log.txt</span><span class="p-tag">launcher.exe</span><span class="p-tag">schtasks /run</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECURITY POSTURE ══ -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">Security Posture</div>
+        <h2 class="sec-h">IT-Auditable by Design</h2>
+        <p class="sec-p">Key security properties of the stack — relevant for client risk assessments and internal IT policy.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="sec-table">
+          <thead>
+            <tr><th>Control</th><th>Implementation</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Privilege level</td><td>LeastPrivilege RunLevel — no admin rights required for Task Scheduler tasks</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Inbound ports</td><td>None — all traffic is outbound to github.com only</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Credential storage</td><td>Git credentials stored in Windows Credential Manager, not plaintext</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>API key exposure</td><td>No API keys in GitHub repos — Claude Desktop uses local auth, not API keys</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Change audit trail</td><td>Git commit history + publish-log.txt provide full timestamped record</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Task visibility</td><td>launcher.exe is a Windows GUI app — no console host, no process that appears to users</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Data residency</td><td>All files stay local; only the git push leaves the machine (to GitHub)</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>SSL/TLS</td><td>GitHub Pages auto-provisions Let's Encrypt certs for custom domains</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Rollback capability</td><td>Full git history — any commit can be reverted in seconds</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Multi-tenant isolation</td><td>Separate repos per client — no shared file system access between clients</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Analytics data</td><td>GA4 + Apps Script export — all data stays in client's Google account</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>AI content safety</td><td>Claude respects UATEST_PLAN.md feature manifest — won't remove documented features</td><td class="note">⚠ Review per client</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BILLING MODEL ══ -->
+  <section id="billing" style="background: var(--bg2);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">Service Billing Model</div>
+        <h2 class="sec-h">Add It to Your Service Catalog</h2>
+        <p class="sec-p">Suggested packaging for MSPs and IT service providers. Adjust margins to your market.</p>
+      </div>
+      <div class="billing-grid">
+        <div class="billing-card">
+          <div class="b-label">One-Time</div>
+          <h3>Setup &amp; Onboarding</h3>
+          <div class="b-price">$2,500</div>
+          <div class="b-period">per client site</div>
+          <div class="b-desc">Full deployment: GitHub repo, DNS config, Task Scheduler, Claude Desktop + MCP, GA4, Apps Script pipeline, UATEST_PLAN, and launch verification.</div>
+          <ul class="b-includes">
+            <li><span>✓</span> setup.ps1 execution on client machine</li>
+            <li><span>✓</span> Custom domain + SSL configuration</li>
+            <li><span>✓</span> Analytics pipeline connected</li>
+            <li><span>✓</span> Staff training (Claude Desktop basics)</li>
+            <li><span>✓</span> UATEST_PLAN.md documentation</li>
+          </ul>
+        </div>
+        <div class="billing-card featured">
+          <div class="b-label">Monthly Retainer</div>
+          <h3>Managed Publishing</h3>
+          <div class="b-price">$500–$2,000</div>
+          <div class="b-period">per client / month</div>
+          <div class="b-desc">Ongoing managed service: AI content updates, publish monitoring, analytics reporting, site maintenance, and quarterly audits. Price by volume of changes.</div>
+          <ul class="b-includes">
+            <li><span>✓</span> AI-assisted content updates (your team drives Claude)</li>
+            <li><span>✓</span> Monthly analytics report from feedback-summary</li>
+            <li><span>✓</span> Auto-publish monitoring + publish-log.txt review</li>
+            <li><span>✓</span> DNS and SSL renewal oversight</li>
+            <li><span>✓</span> Git history and rollback management</li>
+            <li><span>✓</span> Quarterly UATEST regression check</li>
+          </ul>
+        </div>
+        <div class="billing-card">
+          <div class="b-label">White-Label Option</div>
+          <h3>Agency / Reseller</h3>
+          <div class="b-price">Custom</div>
+          <div class="b-period">volume pricing</div>
+          <div class="b-desc">Deploy the system under your own brand for your own clients. Use our setup scripts and template as the foundation. Keep 100% of the margin.</div>
+          <ul class="b-includes">
+            <li><span>✓</span> All setup scripts licensed for resale</li>
+            <li><span>✓</span> DemoTemplate white-labeled to your brand</li>
+            <li><span>✓</span> Unlimited client deployments</li>
+            <li><span>✓</span> Cloud SaaS version (when available)</li>
+            <li><span>✓</span> Priority support from UptownIT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Add This to Your Service Catalog?</h2>
+        <p>Request the deployment guide and setup scripts. We'll walk you through the first client install and help you package it for your practice.</p>
+        <div class="cta-btns">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQUi49AdTBRjetz5MDFQgMIkm9-vOMb_ARKwYEz41j_Nfiwg/viewform?usp=pp_url&entry.2053726945=UptownIT+AI+Publishing" target="_blank" class="btn-green">📋 Request Deployment Guide</a>
+          <a href="index.html" class="btn-ghost">← Back to UptownIT</a>
+        </div>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:20px;">⚠️ This is a pre-launch service offering. Setup guide and scripts available in early access.</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQUi49AdTBRjetz5MDFQgMIkm9-vOMb_ARKwYEz41j_Nfiwg/viewform?usp=pp_url&entry.2053726945=UptownIT+AI+Publishing" target="_blank" class="fab">💬 Feedback</a>
+
+  <footer class="footer">
+    <p style="color:#f59e0b;margin-bottom:8px;">⚠️ Pre-launch service. Setup guide available in early access.</p>
+    <p>&copy; 2026 UptownIT. A product of <a href="https://aiunites.github.io/aiunites-site">AIUNITES</a></p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:12px;">
+      <a href="https://aiunites.github.io/aiunites-site/legal.html#privacy" style="color:rgba(255,255,255,.35);text-decoration:none;">Privacy Policy</a>
+      <a href="https://aiunites.github.io/aiunites-site/legal.html#terms" style="color:rgba(255,255,255,.35);text-decoration:none;">Terms of Service</a>
+    </div>
+  </footer>
+
+</body>
+</html>
