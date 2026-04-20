@@ -556,6 +556,71 @@
     </div>
   </section>
 
+  <!-- ══ LIVE PROOF ══ -->
+  <section id="live-proof" style="background:var(--bg2);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-badge">Live Proof</div>
+        <h2 class="sec-h">The System Running on a Real Network</h2>
+        <p class="sec-p">The AIUNITES network of 22 sites runs on this exact stack. These are the live reports generated automatically by the publishing pipeline.</p>
+      </div>
+
+      <!-- Stats row -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:40px;" id="up-stats-row">
+        <div class="opp-card" style="text-align:center;padding:24px 16px;"><div style="font-size:2rem;font-weight:800;color:var(--green)" id="up-repos">22</div><div style="font-size:.78rem;color:var(--muted);margin-top:4px;">Sites Managed</div></div>
+        <div class="opp-card" style="text-align:center;padding:24px 16px;"><div style="font-size:2rem;font-weight:800;color:var(--green)" id="up-last">--</div><div style="font-size:.78rem;color:var(--muted);margin-top:4px;">Last Publish</div></div>
+        <div class="opp-card" style="text-align:center;padding:24px 16px;"><div style="font-size:2rem;font-weight:800;color:var(--green)" id="up-top3">--</div><div style="font-size:.78rem;color:var(--muted);margin-top:4px;">Pages in Top 3</div></div>
+        <div class="opp-card" style="text-align:center;padding:24px 16px;"><div style="font-size:2rem;font-weight:800;color:var(--green)" id="up-top10">--</div><div style="font-size:.78rem;color:var(--muted);margin-top:4px;">Pages in Top 10</div></div>
+        <div class="opp-card" style="text-align:center;padding:24px 16px;"><div style="font-size:2rem;font-weight:800;color:var(--green)" id="up-sec">--</div><div style="font-size:.78rem;color:var(--muted);margin-top:4px;">Security Scan</div></div>
+      </div>
+
+      <!-- Report cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+        <div class="opp-card" style="border-color:rgba(34,197,94,0.3);">
+          <div class="opp-icon">&#128202;</div>
+          <h3>Network Overview</h3>
+          <p>18-site dashboard showing SEO scores, GSC impressions, indexed pages, and publish stats. Auto-refreshes from live JSON data every publish cycle.</p>
+          <a href="https://aiunites.com/network-overview.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--green);font-size:.85rem;font-weight:600;text-decoration:none;">View Live Report &rarr;</a>
+        </div>
+        <div class="opp-card" style="border-color:rgba(34,197,94,0.3);">
+          <div class="opp-icon">&#128269;</div>
+          <h3>SEO Audit &amp; Network Stats</h3>
+          <p>Weekly automated SEO audit across all 22 sites. Flags missing GA4, wrong canonicals, pre-launch language. 920 issues found and tracked to resolution.</p>
+          <a href="https://aiunites.com/network-stats.html" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--green);font-size:.85rem;font-weight:600;text-decoration:none;">View Live Report &rarr;</a>
+        </div>
+        <div class="opp-card" style="border-color:rgba(34,197,94,0.3);">
+          <div class="opp-icon">&#127942;</div>
+          <h3>Page Rank Report</h3>
+          <p>Per-page Google Search Console position data across all sites. Updated weekly. 7 pages currently in Top 3, all ranked pages in Top 10, zero buried.</p>
+          <a href="https://aiunites.com/network-stats.html#page-rank" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--green);font-size:.85rem;font-weight:600;text-decoration:none;">View Live Report &rarr;</a>
+        </div>
+      </div>
+      <p style="color:rgba(255,255,255,.2);font-size:.75rem;margin-top:16px;">Reports are admin-gated. Contact UptownIT for a live walkthrough.</p>
+    </div>
+  </section>
+
+  <script>
+  (async function() {
+    try {
+      const r = await fetch('https://aiunites.github.io/cloudsion-site/data/publish-stats.json?t=' + Date.now());
+      if (!r.ok) throw new Error();
+      const s = await r.json();
+      const lastEl = document.getElementById('up-last');
+      if (lastEl && s.lastRun) lastEl.textContent = s.lastRun.split(' ')[1] || 'Active';
+      const secEl = document.getElementById('up-sec');
+      if (secEl) { secEl.textContent = s.secStatus || '--'; secEl.style.color = s.secStatus === 'Clean' ? 'var(--green)' : 'var(--amber)'; }
+    } catch(e) {}
+    try {
+      const r2 = await fetch('https://aiunites.github.io/cloudsion-site/data/page-rank.json?t=' + Date.now());
+      if (!r2.ok) throw new Error();
+      const d = await r2.json();
+      const pages = d.pages || [];
+      const t3 = document.getElementById('up-top3'); if (t3) t3.textContent = pages.filter(p => p.position <= 3).length;
+      const t10 = document.getElementById('up-top10'); if (t10) t10.textContent = d.rankedTop10 || 0;
+    } catch(e) {}
+  })();
+  </script>
+
   <!-- ══ CTA ══ -->
   <section id="contact">
     <div class="container">
